@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "BoulevardierSchematicsApp",
+    "title": "Boulevardier application schematic",
+    "type": "object",
+    "properties": {
+        "assetsDirectory": {
+            "type": "string",
+            "format": "path",
+            "description": "The directory containing site assets."
+        }
+    }
+}

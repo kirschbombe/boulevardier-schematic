@@ -1,0 +1,33 @@
+<div id="issue">
+    <app-menu></app-menu>
+    <div id="article">   
+
+        <!-- title page -->
+        <div [ngStyle]="titleStyle">
+            <app-title></app-title>
+        </div>
+
+        <!-- article content -->
+        <app-article
+            *ngIf="activeArticle"
+            [article]="activeArticle">
+        </app-article>
+
+        <footer id="footer" class="article-content">
+            <app-carousel 
+                *ngIf="activeArticle"
+                [article]="activeArticle">
+            </app-carousel>
+        </footer>      
+
+    </div>
+</div>
+<div id="map" [ngStyle]="mapStyle">
+    <app-map></app-map>
+</div>
+<div [ngStyle]="pageStyle">
+    <app-page 
+        *ngIf="activePage"
+        [pageName]="getActivePage()">
+    </app-page>
+</div>

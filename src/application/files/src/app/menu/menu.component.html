@@ -1,0 +1,45 @@
+<div id="menu">
+<div class="navbar navbar-static navbar-right">
+<div ngbDropdown placement="bottom-right">
+
+    <button ngbDropdownToggle class="btn">
+        <fa-icon [icon]="faBars"></fa-icon>
+    </button>
+
+    <div ngbDropdownMenu class="dropdown-menu">
+        
+        <!-- Home -->
+        <a class="dropdown-item" 
+            routerLink="/"
+            (mouseenter)="onMouseEnter()"
+            >Home</a>
+
+        <!-- Articles -->
+        <div class="dropdown-item-text">
+            <div [ngbPopover]="articleList"
+                 triggers="mouseenter"
+                 placement="left-top"
+            >Articles</div>
+                       
+            <ng-template #articleList>
+                <a *ngFor="let article of articles"
+                    class="dropdown-item"
+                    routerLink="{{ article.routerLink }}"
+                    (click)="onClick()"
+                    >{{ article.title }}</a>
+            </ng-template>
+
+        </div>
+        
+        <div class="dropdown-divider"></div>
+        
+        <!-- Pages -->
+        <a *ngFor="let page of pages"
+            class="dropdown-item"
+            routerLink="{{ page.routerLink }}"
+            (mouseenter)="onMouseEnter()"
+            >{{ page.title }}</a>
+    </div>
+</div>
+</div>
+</div>

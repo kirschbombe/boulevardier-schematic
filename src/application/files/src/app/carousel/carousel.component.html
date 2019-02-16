@@ -1,0 +1,54 @@
+<div *ngIf="article" class="carousel">
+
+<div class="carousel-inner">
+<div *ngFor="let image of images"
+    [ngClass]="[(image.id == imageId) ? 'carousel-item active' : 'carousel-item']"
+    >
+
+    <img id="{{ image.id }}"
+        [src]="image.graphic"
+        alt=""
+        
+        [ngbPopover]="popupContent"
+        popoverTitle="{{ image.head }}"
+        triggers="mouseenter:mouseleave"
+        data-container="body"
+        data-placement="left"
+
+        (click)="open(lightbox)"
+    >
+
+    <ng-template #popupContent>
+        <p class="attr">{{ image.note }}</p>
+    </ng-template>
+
+    <ng-template #lightbox>
+        <figure>
+            <img [src]="image.graphic">
+            <figcaption>
+                <p>{{ image.head }}</p>
+                <p><small>{{ image.note }}</small></p>
+            </figcaption>
+        </figure>
+    </ng-template>
+
+</div>
+</div>
+
+<div class="carousel-controls">
+    <!-- dots -->
+    <span class="carousel-indicators">
+        <span *ngFor="let image of images"
+            class="pagination-item"
+        >
+            <a [ngClass]="[(image.id == imageId) ? 'pagination-item active' : 'pagination-item']"
+                (click)="onPaginationClick(image)"
+            ></a>
+        </span>
+    </span>
+    <!-- prev/next -->
+    <span class="carousel-button noselect"><a (click)="onClickPrevious()">Previous</a></span>
+    <span class="carousel-button noselect"><a (click)="onClickNext()">Next</a></span>
+</div>
+
+</div>
