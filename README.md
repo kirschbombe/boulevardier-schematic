@@ -10,18 +10,12 @@ Using this schematic requires that the following tools be installed:
  - nodejs
  - npm
 
-With these prelimiaries available, 
+Once npm is installed, install the Angular CLI tools and this schematic:
 
  - npm install -g angular-cli
- - ...
+ - npm install -g boulevardier-schematic
 
-Additional build and runtime dependencies required for the site will be installed within the project according to its build files.
-
-### Make this schematic available
-
-```
-~/dev/ $ git clone https://github.com/rnathanday/boulevardier-schematic.git
-```
+Additional dependencies required for the site will be installed within the project according to its requirements.
 
 ### Preparing content
 
@@ -70,7 +64,7 @@ The following commands cause a new Angular 6 site to be generated. The directory
 ```
 
 ### Version control
-The generated site includes an initialized git repo, but most of the custom content is not yet included. Run the following commands to 
+The generated site includes an initialized git repo, but most of the custom content is not yet included. Run the following commands to
 put the site under version control:
 
 ```
@@ -81,8 +75,3 @@ put the site under version control:
 Note that there is a .gitignore file included during the `ng new ...` step.
 
 `TODO: add task to automate this step.`
-
-## Building this schematic
-```
-~/dev/boulevardier-schematic/ $ npm run build
-```
