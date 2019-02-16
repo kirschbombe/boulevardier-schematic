@@ -1,4 +1,6 @@
 
+/// <reference types="GeoJSON" />
+
 interface propetiesSection {
     markername: string;
     text: string;
