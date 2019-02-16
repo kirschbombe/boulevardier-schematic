@@ -1,6 +1,6 @@
 {
   "name": "boulevardier-schematic",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A schematic for generating a Boulevardier Angular6 site",
   "scripts": {
     "build": "tsc -p tsconfig.json",
