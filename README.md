@@ -9,6 +9,7 @@ Using this schematic requires that the following tools be installed:
 
  - nodejs
  - npm
+ - xsltproc
 
 Once npm is installed, install the Angular CLI tools and this schematic:
 
@@ -16,6 +17,10 @@ Once npm is installed, install the Angular CLI tools and this schematic:
  - npm install -g boulevardier-schematic
 
 Additional dependencies required for the site will be installed within the project according to its requirements.
+
+The `xsltproc` dependency has the further requirement that the tool be available on the system PATH.
+
+`TODO: review need for other XSLT processors`
 
 ### Preparing content
 
